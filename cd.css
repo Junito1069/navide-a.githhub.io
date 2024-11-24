@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Festive&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin:0; 
+    padding:0;
+    box-sizing: border-box;  
+}
+
+.container {
+  background: radial-gradient(#3b0404,  #1f0101, #0c0000);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.rama {
+    width: 100%;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .7rem;
+}
+.adorno {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    animation: animar .8s linear infinite;
+}
+
+@keyframes animar {
+   0% {
+       background: var(--color);
+       transform: scale(1);
+    }
+    100% {
+        background: var(--color);
+        box-shadow: 0px 0px 10px var(--color);
+        transform: scale(.3);
+   }    
+}
+
+.rama p {
+    padding-top: 3rem;
+    font-size: 2.2rem;
+    color: #fff;
+    font-family: 'Festive';  
+}
+
+
+
+
+
+.buymeacoffee {
+  text-decoration: none;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  background: #FFDD00;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  transition: all 0.1s linear;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buymeacoffee:hover {
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+}
+.snow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* So the snowflakes don't interfere with other elements */
+  z-index: 1000; /* Ensure it is on top of other elements */
+}
+
+@keyframes fall {
+  0% {
+      transform: translateX(0) translateY(-10vh);
+      opacity: 1;
+  }
+  50% {
+      transform: translateX(calc(-10vw + 20vw * var(--random-x))) translateY(50vh);
+      opacity: 0.8;
+  }
+  100% {
+      transform: translateX(calc(-20vw + 40vw * var(--random-x))) translateY(110vh);
+      opacity: 0;
+  }
+}
+
+.snowflake {
+  position: absolute;
+  top: -30px;
+  background: white;
+  border-radius: 50%;
+  animation: fall linear infinite;
+}
+.btn {
+  border: none; 
+  color: black; 
+  padding: 14px 28px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+  position: relative;
+  top: 350px;
+}
+
+.primary {background-color: white; border: 2px solid #833232;} 
+.primary:hover {background: #7a3a3a; color: white;}
